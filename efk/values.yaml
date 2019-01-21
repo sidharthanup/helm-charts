@@ -33,6 +33,13 @@ elasticsearch:
     limits:
       memory: 2048Mi
       cpu: '1'
+  storage:
+    # e.g. gp2 for AWS
+    type: gp2
+    # e.g. kubernetes.io/aws-ebs for AWS
+    classProvisioner: kubernetes.io/aws-ebs
+    # Retain or Delete
+    reclaimPolicy: Delete
 
 # https://github.com/kubernetes/charts/blob/master/stable/fluent-bit/values.yaml
 fluent-bit:
